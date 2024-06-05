@@ -4,13 +4,11 @@ import navItem from "./navItem.js";
 
 export default navItem => {
   return html`
-  <nav>
-      <i class="bars"></i>
+    <nav>
+      <i class="fa-bars"></i>
       <ul class="">
         ${navItems.map(item => navItem(item)).join("")}
       </ul>
     </nav>
-  `
-}
-
-
+  `;
+};

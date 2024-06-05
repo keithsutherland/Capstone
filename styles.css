@@ -135,8 +135,7 @@ nav a:hover {
 /* media queries code */
 
 @media screen {
-
-(max-width: 750px) {
+  (max-width: 750px)
 
 .wrapper {
       display:flex;

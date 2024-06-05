@@ -1,8 +1,8 @@
 import html from "html-literal";
 
 export default () => html`
+  <div class="wrapper">
   <section id="info">
-    <div class="wrapper">
       <h1>"What is FrameData?"</h1>
       <!-- <div class = "flexbox"> -->
       <p>

@@ -1,6 +1,7 @@
 import html from "html-literal";
 
 export default state => html`
+  <div class="wrapper">
   <header>
     <img id="virtuaframelogo"src="./images/virtuaframelogo.png" alt="Virtua Frame logo">
   </header>
@@ -16,4 +17,5 @@ export default state => html`
 <img id = "jean" src="images/vfSiteJean.jpg" alt="Link to Jean framedata">
 <img id = "jacky" src="images/vfSiteJacky.jpg" alt="Link to Jacky framedata">
   </div>
+  <div>
 `;
