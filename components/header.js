@@ -1,5 +1,5 @@
 import html from "html-literal";
-import logo from "../capstone site/images/virtuaframelogo.png";
+import logo from "../capstoneSite/images/virtuaframelogo.png";
 export default state =>
   html`
     <header>

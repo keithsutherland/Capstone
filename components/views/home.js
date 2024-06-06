@@ -3,7 +3,7 @@ import html from "html-literal";
 export default state => html`
   <div class="wrapper">
   <header>
-    <img id="virtuaframelogo"src="./images/virtuaframelogo.png" alt="Virtua Frame logo">
+    <img id="virtuaframelogo"src="./capstoneSite/images/virtuaframelogo.png" alt="Virtua Frame logo">
   </header>
     <nav id="navWrapper">
       <ul>
@@ -13,9 +13,9 @@ export default state => html`
         </ul>
     </nav>
   <div class ="wrapper">
-<img id = "akira" src="images/vfSiteAkira.jpg" alt="Link to Akira framedata">
-<img id = "jean" src="images/vfSiteJean.jpg" alt="Link to Jean framedata">
-<img id = "jacky" src="images/vfSiteJacky.jpg" alt="Link to Jacky framedata">
+<img id = "akira" src="./capstoneSite/images/vfSiteAkira.jpg" alt="Link to Akira framedata">
+<img id = "jean" src="./capstoneSite/images/vfSiteJean.jpg" alt="Link to Jean framedata">
+<img id = "jacky" src="./capstoneSite/images/vfSiteJacky.jpg" alt="Link to Jacky framedata">
   </div>
   <div>
 `;

@@ -1,4 +1,4 @@
 export default {
-  header:/images/virtuaframelogo.png,
-  view: "howToUse",
+  header: "How To Use",
+  view: "howToUse"
 };

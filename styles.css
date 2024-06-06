@@ -88,7 +88,7 @@ p {
 }
 
 body
-{background-image: url(./images/virtuaframe\ background\ 1.jpg);
+{background-image: url(./capstoneSite/images/virtuaframebackground.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -134,8 +134,8 @@ nav a:hover {
 
 /* media queries code */
 
-@media screen {
-  (max-width: 750px)
+ @media screen and
+(max-width: 750px) {
 
 .wrapper {
       display:flex;

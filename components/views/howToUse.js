@@ -26,7 +26,7 @@ export default () => html`
       >
         <img
           id="jeanframedata"
-          src="images/vf5 framedata pic.jpg"
+          src="./capstoneSite/images/vf5framedatapic.jpg"
           alt="Jean in-game frame data example"
         />
       </a>
