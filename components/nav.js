@@ -2,7 +2,7 @@ import html from "html-literal";
 // Example of using a component inside another component
 import navItem from "./navItem.js";
 
-export default navItem => {
+export default navItems => {
   return html`
     <nav>
       <i class="fa-bars"></i>
