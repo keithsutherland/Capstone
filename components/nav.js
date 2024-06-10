@@ -4,7 +4,7 @@ import navItem from "./navItem.js";
 
 export default navItems => {
   return html`
-    <nav>
+    <nav id="navWrapper">
       <i class="fa-bars"></i>
       <ul class="">
         ${navItems.map(item => navItem(item)).join("")}

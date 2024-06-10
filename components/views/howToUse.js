@@ -1,4 +1,5 @@
 import html from "html-literal";
+import vf5framedatapic from "../../capstoneSite/images/vf5framedatapic.jpg";
 
 export default () => html`
   <div class="wrapper">
@@ -26,7 +27,7 @@ export default () => html`
       >
         <img
           id="jeanframedata"
-          src="./capstoneSite/images/vf5framedatapic.jpg"
+          src=${vf5framedatapic}
           alt="Jean in-game frame data example"
         />
       </a>
