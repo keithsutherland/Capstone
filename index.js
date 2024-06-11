@@ -69,14 +69,14 @@ router.hooks({
           });
         break;
 
-      case "pizza":
+      case "howToUse":
         // New Axios get request utilizing already made environment variable
         axios
-          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
+          .get(`${process.env.PLAYERDB_API}`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             console.log("response", response);
-            store.pizza.pizzas = response.data;
+            store.howToUse.account = response.data;
             done();
           })
           .catch(error => {

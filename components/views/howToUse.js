@@ -1,7 +1,7 @@
 import html from "html-literal";
 import vf5framedatapic from "../../capstoneSite/images/vf5framedatapic.jpg";
 
-export default () => html`
+export default state => html`
   <div class="wrapper">
   <section id="info">
       <h1>"What is FrameData?"</h1>
@@ -31,6 +31,10 @@ export default () => html`
           alt="Jean in-game frame data example"
         />
       </a>
+      <p>
+Steam account = ${state.account.data.player.username}
+</p>
     </div>
+
   </section>
 `;
