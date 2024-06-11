@@ -1,4 +1,5 @@
 export default {
   header: "How To Use",
-  view: "howToUse"
+  view: "howToUse",
+  account: {}
 };
