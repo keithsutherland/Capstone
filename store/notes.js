@@ -1,5 +1,5 @@
 export default {
   header: "",
-  view: "home",
-  weather: {}
+  view: "notes",
+  libraries: []
 };
