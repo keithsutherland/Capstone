@@ -33,7 +33,6 @@ float: left;
 .wrapper,
 footer {
   display: flex;
-  /* grid-template-columns: 50% 50%; */
   max-width: 980px;
   margin: 0 auto;
   padding-left: 10px;
@@ -116,6 +115,25 @@ nav a:hover {
   background-color:rgb(230, 230, 230) ;
 
 }
+
+/* styles for "notes" view */
+.noteswrapper {
+  display: flex;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  background-image: url(./capstoneSite/images/formPageBackground.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+
 /* .flexbox {
   display: flex;
 } */
@@ -126,24 +144,11 @@ nav a:hover {
 }
 .wrapper #jeanframedata {
   width: 50%;
-  /* max-width: 100%;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  padding-left: 20px;*/
-}
+
 
 /* media queries code */
 
-/* @media (min-width: 750px) {
-
-      .wrapper {
-      display:flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: space-evenly;
-  }
-   .wrapper
+   .wrapper {
   #jacky
   #akira
   #jean {
@@ -164,7 +169,7 @@ max-height: 100px;
 #virtuaframelogo {
   grid-column-start: 1;
 }
-} */
+
 
 @media screen and (max-width: 760px) {
   .wrapper {

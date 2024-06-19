@@ -16,7 +16,7 @@ export default state => html`
         </ul>
     </nav> -->
   <div class="wrapper">
-    <img id="akira" src=${akira} alt="Link to Akira framedata" />
+  <a href="/akiraData"><img id="akira" src=${akira} alt="Link to Akira framedata" /></a>
     <img id="jean" src=${jean} alt="Link to Jean framedata" />
     <img id="jacky" src=${jacky} alt="Link to Jacky framedata" />
   </div>

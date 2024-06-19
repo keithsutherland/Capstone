@@ -15,14 +15,39 @@ function render(state = store.home) {
   `;
   router.updatePageLinks();
 
-  afterRender();
+  afterRender(state);
 }
 
-function afterRender() {
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+  if (state.view === "notes") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        noteCategory: inputList.noteCategory.value,
+        character: inputList.character.value,
+        noteBody: inputList.noteBody.value
+      };
+      console.log(requestData);
+
+      axios
+        .post(`${process.env.VIRTUAFRAME_API_URL}/notes`, requestData)
+        .then(response => {
+          store.notes.libraries.push(response.data);
+          router.navigate("/notes");
+        })
+        .catch(error => {
+          console.log("It errored", error);
+        });
+    });
+  }
 }
 
 // API KEY  https://api.openweathermap.org/data/2.5/weather?q=St. Louis&APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}
@@ -36,38 +61,38 @@ router.hooks({
         : "home";
     // Add a switch case statement to handle multiple routes
     switch (view) {
-      // Add a case for each view that needs data from an API
-      // New Case for the Home View
-      case "home":
-        axios
-          // Get request to retrieve the current weather data using the API key and providing a city name
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=imperial&q=st%20louis`
-          )
-          .then(response => {
-            console.log("Weather Data:", response.data);
-            // Create an object to be stored in the Home state from the response
-            store.home.weather = {
-              city: response.data.name,
-              temp: response.data.main.temp,
-              feelsLike: response.data.main.feels_like,
-              description: response.data.weather[0].main
-            };
+      //   // Add a case for each view that needs data from an API
+      //   // New Case for the Home View
+      //   case "home":
+      //     axios;
+      //     Get request to retrieve the current weather data using the API key and providing a city name
+      //     .get(
+      //       `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=imperial&q=st%20louis`
+      //     )
+      //     .then(response => {
+      //       console.log("Weather Data:", response.data);
+      //       // Create an object to be stored in the Home state from the response
+      //       store.home.weather = {
+      //         city: response.data.name,
+      //         temp: response.data.main.temp,
+      //         feelsLike: response.data.main.feels_like,
+      //         description: response.data.weather[0].main
+      //       };
 
-            // An alternate method would be to store the values independently
-            /*
-      store.Home.weather.city = response.data.name;
-      store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
-      store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
-      store.Home.weather.description = response.data.weather[0].main;
-      */
-            done();
-          })
-          .catch(err => {
-            console.log(err);
-            done();
-          });
-        break;
+      //     // An alternate method would be to store the values independently
+      //     /*
+      //   store.Home.weather.city = response.data.name;
+      //   store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+      //   store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
+      //   store.Home.weather.description = response.data.weather[0].main;
+      //   */
+      //     //     done();
+      //     //   })
+      //     //   .catch(err => {
+      //     //     console.log(err);
+      //     //     done();
+      //     //   });
+      //     break;
 
       case "howToUse":
         // New Axios get request utilizing already made environment variable
