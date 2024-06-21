@@ -48,6 +48,23 @@ function afterRender(state) {
         });
     });
   }
+  if (state.view === "notesSearch") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      axios
+          .get(`${process.env.VIRTUAFRAME_API_URL}/notes?character=${inputList.character.value}`, requestData)
+          .then(response => {
+            store.notesSearch.characterNotes=response.data;
+          })
+          .catch(error => {
+            console.log("It errored", error);
+          });
+    }
+  });
 }
 
 // API KEY  https://api.openweathermap.org/data/2.5/weather?q=St. Louis&APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}
