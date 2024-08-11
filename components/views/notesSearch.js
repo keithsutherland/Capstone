@@ -1,4 +1,5 @@
 import html from "html-literal";
+import notes from "./notes";
 
 export default state => html`
   <div id="searchWrapper">
@@ -13,5 +14,18 @@ export default state => html`
       </select>
       <input type="submit" value="Search" />
     </form>
+    <table>
+      ${state.characterNotes
+        .map(notes => {
+          return html`
+            <tr>
+              <td>${notes.character}</td>
+              <td>${notes.noteCategory}</td>
+              <td>${notes.noteBody}</td>
+            </tr>
+          `;
+        })
+        .join("")}
+    </table>
   </div>
 `;

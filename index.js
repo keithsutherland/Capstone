@@ -56,15 +56,18 @@ function afterRender(state) {
       console.log("Input Element List", inputList);
 
       axios
-          .get(`${process.env.VIRTUAFRAME_API_URL}/notes?character=${inputList.character.value}`, requestData)
-          .then(response => {
-            store.notesSearch.characterNotes=response.data;
-          })
-          .catch(error => {
-            console.log("It errored", error);
-          });
-    }
-  });
+        .get(
+          `${process.env.VIRTUAFRAME_API_URL}/notes?character=${inputList.character.value}`
+        )
+        .then(response => {
+          store.notesSearch.characterNotes = response.data;
+          router.navigate("/notesSearch");
+        })
+        .catch(error => {
+          console.log("It errored", error);
+        });
+    });
+  }
 }
 
 // API KEY  https://api.openweathermap.org/data/2.5/weather?q=St. Louis&APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}
@@ -158,3 +161,12 @@ router
     }
   })
   .resolve();
+
+// hamburger menu code
+const menu_btn = document.querySelector(".hamburger");
+const mobile_menu = document.querySelector(".mobile-nav");
+
+menu_btn.addEventListener("click", function() {
+  menu_btn.classList.toggle("is-active");
+  mobile_menu.classList.toggle("is-active");
+});

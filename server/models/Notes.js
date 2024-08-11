@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 const notesSchema = new mongoose.Schema({
   noteCategory: {
-    type: String,
-    validate: /^[A-Za-z0-9 ]*$/
+    type: String
   },
 
   character: {
@@ -14,8 +13,7 @@ const notesSchema = new mongoose.Schema({
 
   noteBody: {
     type: String,
-    required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    required: true
   }
 });
 
